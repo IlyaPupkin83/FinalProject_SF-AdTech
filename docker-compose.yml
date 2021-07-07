@@ -6,7 +6,7 @@ services:
   php:
     build:
       context: ./php
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     image: img-php
     container_name: cont-php
     ports:
@@ -21,7 +21,7 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     image: img-nginx
     container_name: cont-nginx
     ports:
@@ -36,7 +36,7 @@ services:
   db:
     build:
       context: ./mysql
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     ports:
         - "3306:3306"
     environment:
