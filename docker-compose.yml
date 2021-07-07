@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+ 
+  #контейнер с PHP-FPM
+  php:
+    build:
+      context: ./php
+      dockerfile: dockerfile
+    image: img-php
+    container_name: cont-php
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./code:/data/sf-adtech.com
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    networks:
+      - app-network
+ 
+  #контейнер с nginx
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: dockerfile
+    image: img-nginx
+    container_name: cont-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./code:/data/sf-adtech.com
+    networks:
+      - app-network
+ 
+  #контейнер с MySQL
+  db:
+    build:
+      context: ./mysql
+      dockerfile: dockerfile
+    ports:
+        - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+ 
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
