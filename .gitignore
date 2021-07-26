@@ -1,2 +1,5 @@
 .env
 dbdata
+code/vendor
+code/logs/*
+code/public/images/*
