@@ -1,5 +1,6 @@
 .env
 dbdata
+gulp/node_modules
 code/vendor
 code/logs/*
 code/public/images/*

@@ -1,0 +1,14 @@
+{
+  "name": "sf-adtech",
+  "version": "1.0.0",
+  "description": "npm & gulp-cli must be installed",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilya",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
