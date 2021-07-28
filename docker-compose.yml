@@ -43,8 +43,18 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./dbdata:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/my.cnf
+      - ./dbdata:/var/lib/mysql-files
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+ 
+  #контейнер для кэширования
+  memcached:
+    build: 
+      context: ./memcached
+      dockerfile: Dockerfile
+    ports:
+       - "11211:11211"
     networks:
       - app-network
  
