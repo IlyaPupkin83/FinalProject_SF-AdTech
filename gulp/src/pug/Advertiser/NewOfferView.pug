@@ -1,0 +1,19 @@
+.advertiser-new
+    form(action="", method="POST").advertiser-new__form
+        input(type="hidden", name="route" value="advertiser/offers/new")
+        label(for="title") Название:
+        input(type="text", name="title" autocomplete="off" id="title" required)
+        label(for="link") Ссылка: 
+        input(type="text", name="link" autocomplete="off" id="link" required)
+        label(for="cost") Стоимость перехода по ссылке (&#8381;):
+        input(type="number", name="cost" id="cost" min="0.1" step="0.1" required)
+        label(for="tematics") Тематика:
+        select(name="tematics[]" id="tematics" multiple size="6" required)
+            <?= $props['tematicsList'] ?>
+        .advertiser-new__image
+            label.image__label(for="image")
+                p Изображение: 
+                    span.label__filename
+                p.label__icon &#8659;
+            input.image__button(type="file", name="image" id="image")
+        button(type="submit") Создать

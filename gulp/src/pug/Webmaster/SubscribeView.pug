@@ -1,0 +1,9 @@
+.webmaster-subscribe
+    form(action="/webmaster/subscribe", method="GET").webmaster-subscribe__tematics
+        .tematics__select
+            label(for="tematic") Тематика:
+            select(name="tematic" id="tematic")
+                <?= $props['tematics'] ?>
+        button(type="submit") Загрузить "офферы"
+    .webmaster-subscribe__offers
+            <?= $props['offers'] ?>

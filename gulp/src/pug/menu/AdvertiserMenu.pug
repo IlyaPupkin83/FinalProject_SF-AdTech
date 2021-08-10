@@ -1,0 +1,21 @@
+button.advertiser-menu__offers Мои "офферы"
+button.advertiser-menu__new Создать "оффер"
+button.advertiser-menu__statistic Статистика
+
+.hr
+form(action="/" method="POST")
+    input(type="hidden", name="route" value="signout")
+    |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+    button(type="submit").advertiser-menu__logout Выйти
+
+noscript
+    a(href="/advertiser/offers") 
+        button.advertiser-menu__offers Мои "офферы"
+    a(href="/advertiser/new") 
+        button.advertiser-menu__new Создать "оффер"
+    a(href="/advertiser/statistic") 
+        button.advertiser-menu__statisti Статистика
+    form(action="/" method="POST")
+        input(type="hidden", name="route" value="signout")
+        |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+        button(type="submit").advertiser-menu__logout Выйти

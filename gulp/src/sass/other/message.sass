@@ -1,0 +1,42 @@
+@import ../variables
+
+.header__message
+    width: 400px
+    height: 50px
+    font-weight: 600
+    padding: 10px
+    overflow-wrap: break-word
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 20
+    position: absolute
+    right: 0
+    bottom: -52px
+    background-color: $secondaryBColor
+    color: $secondaryColor
+    border: 2px groove $primaryBColor
+    border-bottom-left-radius: 5px
+    &:empty
+        display: none
+    &:not(:empty)
+        animation: message 3s forwards
+    @media screen and (max-width: $screenSmartphones)
+        border-bottom-left-radius: 0
+        width: 100%
+
+@keyframes message
+    0%
+        transform: translateX(100%)
+        opacity: 1
+    10%
+        transform: translateX(0)
+    90%
+        transform: translateX(0)
+        opacity: 1
+    99%
+        transform: translateX(0)
+        opacity: 0
+    100%
+        transform: translateX(100%)
+        opacity: 0

@@ -1,0 +1,69 @@
+@import ../variables
+
+.content__menu
+    width: 30px
+    height: 100%
+    overflow: hidden
+    position: absolute
+    display: flex
+    justify-content: space-between
+    transition: 0.3s
+    z-index: 10
+    @media screen and (min-width: $screenLaptops)
+        &:hover
+            width: 250px
+    @media screen and (max-width: $screenSmartphones)
+        top: 0
+        flex-direction: column
+        width: 100%
+        height: 30px
+
+.content__menu_open
+    @media screen and (max-width: $screenLaptops)
+        width: 250px
+    @media screen and (max-width: $screenSmartphones)
+        width: 100%
+        height: 80%
+
+.menu__cap
+    flex-basis: 30px
+    background-color: $primaryBColor
+    color: $primaryColor
+    font-weight: 600
+    font-family: monospace
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    user-select: none
+    cursor: pointer
+    border-left: 3px groove $primaryBColor
+    border-right: 3px groove $primaryBColor
+    &_flashing
+        animation: cap-flashing 3s infinite alternate
+    @media screen and (max-width: $screenSmartphones)
+        height: 30px
+        flex-direction: row
+        border-top: 3px groove $primaryBColor
+        border-bottom: 3px groove $primaryBColor
+
+@keyframes cap-flashing
+    0%
+        background-color: $primaryBColor
+        color: $primaryColor
+    100%
+        background-color: $secondaryBColor
+        color: $secondaryColor
+
+.menu__body
+    flex: 1 1
+    background-color: $secondaryBColor
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    align-items: center
+    & form
+        background-color: $secondaryBColor
+
+    & button
+        margin-top: 10px

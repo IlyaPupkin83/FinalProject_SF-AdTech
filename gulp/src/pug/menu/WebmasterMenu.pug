@@ -1,0 +1,21 @@
+button.webmaster-menu__subscriptions Подписки
+button.webmaster-menu__subscribe Подписаться
+button.webmaster-menu__stats Статистика
+
+.hr
+form(action="/" method="POST")
+    input(type="hidden", name="route" value="signout")
+    |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+    button(type="submit").webmaster-menu__logout Выйти
+
+noscript
+    a(href="/webmaster/subscriptions") 
+        button.webmaster-menu__subscriptions Подписки
+    a(href="/webmaster/subscribe") 
+        button.webmaster-menu__subscribe Подписаться
+    a(href="/webmaster/stats") 
+        button.webmaster-menu__stats Статистика
+    form(action="/" method="POST")
+        input(type="hidden", name="route" value="signout")
+        |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+        button(type="submit").webmaster-menu__logout Выйти

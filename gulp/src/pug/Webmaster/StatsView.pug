@@ -1,0 +1,25 @@
+.webmaster-stats
+    form.webmaster-stats__form(action="" method="POST")
+        input(type="hidden", name="route" value="webmaster/stats/show")
+        h3 Статистика: 
+            span.webmaster-stats__offer-name
+        .webmaster-stats__output
+            .output__redirects
+                span Переходов: 
+                span#redirects
+            .output__costs
+                span Доход: 
+                span#costs
+                span &#8381;
+        p Временной период:
+        .webmaster-stats__date
+            div
+                label(for="datefrom") От:
+                input(type="date", name="datefrom" id="datefrom")
+            div
+                label(for="dateto") До:
+                input(type="date", name="dateto" id="dateto")
+        p "Оффер":
+        .webmaster-stats__offers.radiogroup
+            <?= $props['offers-list'] ?>
+        button(type="submit") Обновить

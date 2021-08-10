@@ -1,0 +1,26 @@
+.advertiser-stats
+    form.advertiser-stats__form(action="" method="POST")
+        input(type="hidden", name="route" value="advertiser/stats/show")
+        h3 Статистика: 
+            span.advertiser-stats__offer-name
+        .advertiser-stats__output
+            .output__redirects
+                span Кол-во переходов: 
+                span#redirects
+            .output__costs
+                span Суммарные расходы: 
+                span#costs
+                span &#8381;
+        p Временной период:
+        .advertiser-stats__date
+            div
+                label(for="datefrom") От:
+                input(type="date", name="datefrom" id="datefrom")
+            div
+                label(for="dateto") До:
+                input(type="date", name="dateto" id="dateto")
+        p Выберите "оффер":
+        .advertiser-stats__offers.radiogroup
+            <?= $props['offers-list'] ?>
+        button(type="submit") Обновить
+        

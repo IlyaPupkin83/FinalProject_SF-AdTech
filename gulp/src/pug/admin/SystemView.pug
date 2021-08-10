@@ -1,0 +1,24 @@
+.admin-system 
+    form.admin-system__stats-form(action="" method="POST")
+        p Статистика:
+        input(type="hidden", name="route" value ="admin/system/Stats")
+        div
+            label(for="datefrom") От:
+            input(type="date", name="datefrom" id="datefrom")
+        div
+            label(for="dateto") До:
+            input(type="date", name="dateto" id="dateto")
+        button(type="submit") Обновить
+    .admin-system__stats-output 
+        .stats-output__links 
+            label Кол-во выданных ссылок: 
+            p.links__output
+        .stats-output__redirects 
+            label Кол-во переходов: 
+            p.redirects__output
+            .stats-output__rejections 
+            label Кол-во отказов: 
+            p.rejections__output
+            .stats-output__income 
+            label Суммарный доход системы:
+            p.income__output

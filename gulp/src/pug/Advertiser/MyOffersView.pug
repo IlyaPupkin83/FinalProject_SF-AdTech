@@ -1,0 +1,8 @@
+.advertiser-offers
+    input(type="hidden", name="csrf" id="csrf" value="<?= $props['token'] ?>")
+    .advertiser-offers__enable
+        p.enable__title Активные "офферы"
+        <?= $props['offers-list'] ?>
+    .advertiser-offers__disable(action="" method="POST")
+        p.disable__title Неактивные "офферы"
+        <?= $props['disable-list'] ?>

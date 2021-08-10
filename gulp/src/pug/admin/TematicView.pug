@@ -1,0 +1,14 @@
+.admin-tematic 
+    form.admin-tematic__new(action="" method="POST")
+        input(type="hidden", name="route" value ="admin/tematic/New")
+        label(for="newTematic") Тематика
+        input(type="text", name="name" autocomplete="off" id="newTematic" required)
+        button(type="submit") Создать
+    form.admin-tematic__del(action="" method="POST")
+        input(type="hidden", name="route" value ="admin/tematic/Del")
+        p  Список тематик:
+        select(name="tematics[]" multiple size="10" required) 
+            <?= $props['tematics'] ?>
+        button(type="submit") Удалить
+        
+            

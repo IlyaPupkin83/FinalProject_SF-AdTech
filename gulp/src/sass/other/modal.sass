@@ -1,0 +1,44 @@
+.modal
+    position: absolute
+    z-index: 10
+    display: flex
+    width: 100%
+    height: 100%
+    flex: 1 1 auto
+    justify-content: center
+    align-items: center
+    background-color: #00000028
+    opacity: 0
+    animation: modalshow 0.3s forwards
+    &_hide
+        animation: modalhide 0.3s forwards
+    &__close
+        position: absolute
+        top: 10px
+        right: 10px
+        width: 30px
+        height: 30px
+        font-size: 42px
+        font-weight: 700
+        cursor: pointer
+        background-color: #1ca03d
+        border-radius: 5px
+        color: white
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: 0.5s
+        &:hover
+            background-color: #08bdff
+
+@keyframes modalshow
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes modalhide
+    0%
+        opacity: 1
+    100%
+        opacity: 0

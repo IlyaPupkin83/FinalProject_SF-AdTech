@@ -1,0 +1,26 @@
+@import "../variables"
+
+.admin-system
+    align-self: center
+    display: flex
+    & form
+        border: 2px groove $primaryBColor
+    @media screen and (max-width: $screenSmartphones)
+        flex-direction: column
+
+.admin-system__stats-output
+    display: flex
+    flex-direction: column
+    padding: 20px
+    border-radius: 5px
+    background-color: $primaryBColor
+    color: $primaryColor
+    & label
+        font-weight: 500
+    & p
+        background-color: $secondaryBColor
+        color: $secondaryColor
+        padding: 5px
+        border-radius: 3px
+        &:not(:last-of-type)
+            margin-bottom: 5px

@@ -1,0 +1,12 @@
+.admin-users
+    form.admin-users__ban(action="" method="POST")
+        input(type="hidden", name="route" value ="admin/users/Ban")
+        label(for="banUser") Имя пользователя
+        input(type="text", name="name" autocomplete="off" id="banUser" required)
+        button(type="submit" ) Заблокировать
+    form.admin-users__no-auth(action="" method="POST")
+        input(type="hidden", name="route" value ="admin/users/Auth")
+        p Неавторизованные пользователи:
+        select(name="noauth[]" multiple size="10" required)
+            <?= $props['noAuthList'] ?>
+        button(type="submit" name="route" value ="admin/users/Auth") Разрешить

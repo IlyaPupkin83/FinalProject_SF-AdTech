@@ -1,0 +1,21 @@
+button.admin-menu__system Система
+button.admin-menu__users Пользователи
+button.admin-menu__tematic Тематики
+
+.hr
+form(action="/" method="POST")
+    input(type="hidden", name="route" value="signout")
+    |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+    button(type="submit").admin-menu__logout Выйти
+
+noscript
+    a(href="/admin/system") 
+        button.admin-menu__system Система
+    a(href="/admin/users") 
+        button.admin-menu__users Пользователи
+    a(href="/admin/tematic") 
+        button.admin-menu__tematic Тематики
+    form(action="/" method="POST")
+        input(type="hidden", name="route" value="signout")
+        |<input type="hidden" name="csrf" value="<?= $props['token'] ?>" />
+        button(type="submit").admin-menu__logout Выйти

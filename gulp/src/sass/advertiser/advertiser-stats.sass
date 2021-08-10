@@ -1,0 +1,26 @@
+@import ../variables
+
+.advertiser-stats
+    &__output
+        width: 100%
+        display: none
+        align-self: start
+    &__output_show
+        display: block
+    & .output__redirects, .output__costs
+        background-color: $secondaryBColor
+        color: $secondaryColor
+        padding: 5px
+        width: 100%
+
+    & p
+        align-self: start
+    & .radiogroup
+        width: 100%
+        justify-content: space-evenly
+        & label
+            width: 140px
+            overflow: hidden
+            text-overflow: ellipsis
+    &__date
+        align-self: flex-start
