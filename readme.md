@@ -18,5 +18,5 @@
 
 1. `git clone`
 2. `Composer install`
-3. Миграции
+3. `docker-compose up -d --build`
 4. Настройка nginx + php-fpm
